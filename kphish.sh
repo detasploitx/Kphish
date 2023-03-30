@@ -101,19 +101,20 @@ banner() {
 ## Small Banner
 banner_small() {
 	cat <<- EOF
+	
 		${GREEN}
-		   		  _  __      _     _     _     
-		   		 | |/ /     | |   (_)   | |    
-		   		 | ' / _ __ | |__  _ ___| |__  
-		   		 |  < | '_ \| '_ \| / __| '_ \ 
-		   		 | . \| |_) | | | | \__ \ | | |
-		   		 |_|\_\ .__/|_| |_|_|___/_| |_|
-		   		      | |                      
-		   		      |_|                      
-		   		${GREEN}
-		   		                                    ${BLUE}Version : ${__version__}
-		   
-		   		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by MD Asif Hasan (DetaSploit)${WHITE}
+		  _  __      _     _     _     
+		 | |/ /     | |   (_)   | |    
+		 | ' / _ __ | |__  _ ___| |__  
+		 |  < | '_ \| '_ \| / __| '_ \ 
+		 | . \| |_) | | | | \__ \ | | |
+		 |_|\_\ .__/|_| |_|_|___/_| |_|
+		      | |                      
+		      |_|                      
+		${GREEN}
+		                                    ${BLUE}Version : ${__version__}
+
+		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by MD Asif Hasan (DetaSploit)${WHITE}
 	EOF
 }
 

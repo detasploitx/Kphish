@@ -94,7 +94,7 @@ banner() {
 		${GREEN}
 		                                    ${BLUE}Version : ${__version__}
 
-		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by MD Asif Hasan (DetaSploit)${WHITE}
+		${CYAN}―――――― All praise is for Allah ――――――${WHITE}
 	EOF
 }
 
@@ -114,7 +114,7 @@ banner_small() {
 		${GREEN}
 		                                    ${BLUE}Version : ${__version__}
 
-		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by MD Asif Hasan (DetaSploit)${WHITE}
+		${CYAN}―――――― All praise is for Allah ――――――${WHITE}
 	EOF
 }
 
@@ -521,9 +521,9 @@ site_gmail() {
 main_menu() {
 	{ clear; banner; echo; }
 	cat <<- EOF
-		${ORANGE}Kphish :${BLUE} Simple Facebook & Gmail Phishing Tool
+		${GREEN}[${ORANGE}•${GREEN}]${BLUE} Tool Created By MD Asif Hasan (${ORANGE}DetaSploit${BLUE})
 
-		${GREEN}[${ORANGE}•${GREEN}]${RED} Phishing Sites :
+		${RED}―――――― Phishing Sites ――――――
 
 		${GREEN}[${ORANGE}•${GREEN}]${BLUE} Facebook―――1
 		${GREEN}[${ORANGE}•${GREEN}]${BLUE} Gmail―――2

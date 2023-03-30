@@ -1,64 +1,39 @@
-# AutoPhisher
+<h1><p align="center">Kphish</p></h1>
 
-![](https://github.com/CodingRanjith/autophisher/blob/main/crkgithub/logo.jpg)
+<p align="center">Simple Facebook & Gmail Phishing Tool<br/>―――― MD Asif Hasan ――――</p>
 
-   ## An automated Social Media phishing toolkit. 
-   This Tool is made for educational purpose only ! Author will not be responsible for any misuse of this toolkit ! 
+## The Tool is for :
+- Kali Linux
+- Termux
 
-# DISCLAIMER
+## FEATURES
 
-The use of the autophisher & its resources/phishing-pages is COMPLETE RESPONSIBILITY of the END-USER. Developers assume NO liability and are NOT responsible for any misuse or damage caused by this program. Also we inform you that some of your your actions may be ILLEGAL and you CAN NOT use this software to test person or company without WRITTEN PERMISSION from them.
-
-# FEATURES
-
-- Latest and updated login pages every month
+- Latest and Updated Login Pages Every Month
 - Beginner Friendly
-- Multiple Tunneling optoins
+- Multiple Tunneling Optoins
     * Localhost
     * CloudFlared
     * Ngrok(https://ngrok.com/)
     * LocalXpose(https://localxpos.io/)
 
-# Installation
+### Installation :
 
-### Kali Linux
+```bash
+apt update && apt upgrade -y
+```
+```bash
+apt install git -y
+```
+```bash
+git clone https://github.com/DetaSploit/Kphish
+```
+```bash
+cd Kphish
+```
+```bash
+bash kphish.sh
+```
 
-![](https://github.com/CodingRanjith/autophisher/blob/main/crkgithub/linuxlogo.jpg)
-
-- `apt update`
-- `apt install git`
-
-      git clone https://github.com/CodingRanjith/autophisher.git
-      
-- `cd autophisher`
-- `bash autophisher.sh`
-
-### Android Termux App
-
-![](https://github.com/CodingRanjith/autophisher/blob/main/crkgithub/android.jpg)
-
-- `apt upgrade`
-- `apt install git`
-
-      git clone https://github.com/CodingRanjith/autophisher.git
-      
-- `ls`
-- `cd autophisher`
-- `bash autophisher.sh`
-
-# Licence
-
-GNU General Public License v3.0
-
-# Legal Notice
-
-* This software is provided for educational use only! The author will not be held responsible for any illegal activity by you. By using this software, you agree to these terms.
-
-# Donate!
-
-### PayPal: https://bit.ly/3QKknix
-
-
-
-
-
+## Note :
+<li>This Tool is made for educational purpose only! Author will not be responsible for any misuse of this toolkit!</li>
+<li>Use It At Your Own Risk</li>

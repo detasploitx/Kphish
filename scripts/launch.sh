@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# https://github.com/CodingRanjith/autophisher
+# https://github.com/DetaSploit/Kphish
 
 if [[ $(uname -o) == *'Android'* ]];then
-	KPHISH_ROOT="/data/data/com.termux/files/usr/opt/autophisher"
+	KPHISH_ROOT="/data/data/com.termux/files/usr/opt/kphish"
 else
-	export KPHISH_ROOT="/opt/Kphish"
+	export KPHISH_ROOT="/opt/kphish"
 fi
 
 if [[ $1 == '-h' || $1 == 'help' ]]; then
-	echo "To run Kphish type \`Kphish\` in your cmd"
+	echo "To run Kphish type \`kphish\` in your cmd"
 	echo
 	echo "Help:"
 	echo " -h | help : Print this menu & Exit"

@@ -1,6 +1,6 @@
 <h1><p align="center">Kphish</p></h1>
 
-<p align="center">Simple Facebook & Gmail Phishing Tool<br/>―――― MD Asif Hasan ――――</p>
+<p align="center">Simple Facebook & Gmail Phishing Tool<br/></p>
 
 ## The Tool is for :
 - Kali Linux

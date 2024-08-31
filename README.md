@@ -25,7 +25,7 @@ apt update && apt upgrade -y
 apt install git -y
 ```
 ```bash
-git clone https://github.com/DetaSploit/Kphish
+git clone https://github.com/detasploitx/Kphish
 ```
 ```bash
 cd Kphish
